@@ -12,9 +12,7 @@ pipeline {
 
         stage('Build docker image') {
             steps {  
-                sh 'docker build -t vasistavasudev
-/
-nodejs:$BUILD_NUMBER .'
+                sh 'docker build -t vasistavasudev/nodejs:$BUILD_NUMBER .'
             }
         }
         stage('login to dockerhub') {
@@ -24,9 +22,7 @@ nodejs:$BUILD_NUMBER .'
         }
         stage('push image') {
             steps{
-                sh 'docker push vasistavasudev
-/
-nodejs:$BUILD_NUMBER'
+                sh 'docker push vasistavasudev/nodejs:$BUILD_NUMBER'
             }
         }
 }
